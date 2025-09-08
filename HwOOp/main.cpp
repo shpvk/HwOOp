@@ -67,9 +67,32 @@ void delete_abonent(Abonent* a, int& arr_size)
         break;
     }
 }
+void find_by_name(Abonent* a, int& arr_size)
+{
+    char* full_name = nullptr;
+    std::cout << "Enter full name (one word)";
+    std::cin >> full_name;
+
+    for (int i = 0; i < arr_size; ++i)
+    {
+        if (full_name == nullptr)
+        {
+            return;
+        }
+        if (strcmp(full_name, a[i].GetFullName()) == 0)
+        {
+            std::cout << "The abonent with the index " << i << " matches the full name.";
+        }
+        else
+        {
+            std::cout << "No abonent with that name was found.\n";
+        }
+    }
+    delete[] full_name;
+}
 void show_abonents(Abonent* a, int arr_size)
 {
-    for (int i = 0; i < arr_size - 1; ++i)
+    for (int i = 0; i < arr_size; ++i)
     {
         std::cout << "Abonent " << i << ":\n";
         a[i].Print();
@@ -109,17 +132,13 @@ int main()
             delete_abonent(a1, arr_size);
             break;
         case 2:
+            find_by_name(a1, arr_size);
             break;
         case 3:
             show_abonents(a1, arr_size);
             break;
-
         default:
             break;
-
-
-
-        
         }
     }
 
