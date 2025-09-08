@@ -1,6 +1,6 @@
 #include "PhoneBook.h"
 #include <iostream>
-PhoneBook::PhoneBook()
+Abonent::Abonent()
 {
 	full_name = nullptr;
 	work_phone = 0;
@@ -8,7 +8,7 @@ PhoneBook::PhoneBook()
 	additional_info = nullptr;
 }
 
-PhoneBook::PhoneBook(const char* name, int work_phone, int home_phone, const char* additional_info)
+Abonent::Abonent(const char* full_name, int work_phone, int home_phone, const char* additional_info)
 {
 	if (this->full_name != nullptr)
 	{
@@ -32,13 +32,13 @@ PhoneBook::PhoneBook(const char* name, int work_phone, int home_phone, const cha
 	strcpy_s(this->additional_info, strlen(additional_info) + 1, additional_info);
 }
 
-PhoneBook::~PhoneBook()
+Abonent::~Abonent()
 {
 	delete[] full_name;
 	delete[] additional_info;
 }
 
-void PhoneBook::Init(const char* full_name, int work_phone, int home_phone, const char* additional_info)
+void Abonent::Init(const char* full_name, int work_phone, int home_phone, const char* additional_info)
 {
 	if (this->full_name != nullptr)
 	{
@@ -62,7 +62,7 @@ void PhoneBook::Init(const char* full_name, int work_phone, int home_phone, cons
 	strcpy_s(this->additional_info, strlen(additional_info) + 1, additional_info);
 }
 
-void PhoneBook::Print()
+void Abonent::Print()
 {
 	std::cout << "Full name: " << full_name << std::endl;
 	std::cout << "Work phone number: " << work_phone << std::endl;
@@ -71,27 +71,27 @@ void PhoneBook::Print()
 }
 
 
-const char* PhoneBook::GetFullName()
+const char* Abonent::GetFullName()
 {
 	return full_name;
 }
 
-inline int PhoneBook::GetWorkPhone()
+inline int Abonent::GetWorkPhone()
 {
 	return work_phone;
 }
 
-inline int PhoneBook::GetHomePhone()
+inline int Abonent::GetHomePhone()
 {
 	return home_phone;
 }
 
-const char* PhoneBook::GetAdditionalInfo()
+const char* Abonent::GetAdditionalInfo()
 {
 	return additional_info;
 }
 
-void PhoneBook::SetFullName(const char* full_name)
+void Abonent::SetFullName(const char* full_name)
 {
 	if (this->full_name != nullptr)
 	{
@@ -102,17 +102,17 @@ void PhoneBook::SetFullName(const char* full_name)
 	strcpy_s(this->full_name, strlen(full_name) + 1, full_name);
 }
 
-void PhoneBook::SetWorkPhone(int work_phone)
+void Abonent::SetWorkPhone(int work_phone)
 {
 	this->work_phone = work_phone;
 }
 
-void PhoneBook::SetHomePhone(int home_phone)
+void Abonent::SetHomePhone(int home_phone)
 {
 	this->home_phone = home_phone;
 }
 
-void PhoneBook::SetAdditionalInfo(const char* additional_info)
+void Abonent::SetAdditionalInfo(const char* additional_info)
 {
 	if (this->additional_info != nullptr)
 	{
