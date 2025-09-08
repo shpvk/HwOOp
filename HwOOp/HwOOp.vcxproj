@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HwOOp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PhoneBook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PhoneBook.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
