@@ -14,15 +14,15 @@ public:
 	void Init(const char* name, int work_phone, int home_phone, const char* additional_info);
 	void Print();
 	
-	void GetFullName();
-	void GetWorkPhone();
-	void GetHomePhone();
-	void GetAdditionalInfo();
+	const char* GetFullName();
+	inline int GetWorkPhone();
+	inline int GetHomePhone();
+	const char* GetAdditionalInfo();
 
-	const char* SetFullName();
-	int SetWorkPhone();
-	int SetFHomePhone();
-	const char* SetAdditionalInfo();
+	void SetFullName(const char* full_name);
+	void SetWorkPhone(int work_phone);
+	void SetHomePhone(int home_phone);
+	void SetAdditionalInfo(const char* additional_info);
 
 };
 
