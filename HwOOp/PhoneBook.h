@@ -13,6 +13,7 @@ public:
 
 	void Init(const char* full_name, int work_phone, int home_phone, const char* additional_info);
 	void Print();
+	void DeleteAbonent();
 	
 	const char* GetFullName();
 	inline int GetWorkPhone();

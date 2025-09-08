@@ -70,6 +70,20 @@ void Abonent::Print()
 	std::cout << "Additional Info : " << additional_info << std::endl;
 }
 
+void Abonent::DeleteAbonent()
+{
+	if (full_name != nullptr)
+	{
+		delete[] full_name;
+	}
+	if (additional_info != nullptr)
+	{
+		delete[] additional_info;
+	}
+	work_phone = 0;
+	home_phone = 0;
+}
+
 
 const char* Abonent::GetFullName()
 {
