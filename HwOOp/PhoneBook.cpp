@@ -1,13 +1,5 @@
 #include "PhoneBook.h"
 #include <iostream>
-
-/*
-	char* full_name;
-	int work_phone;
-	int home_phone;
-	char* additional_info;
-*/
-
 PhoneBook::PhoneBook()
 {
 	full_name = nullptr;
@@ -18,7 +10,26 @@ PhoneBook::PhoneBook()
 
 PhoneBook::PhoneBook(const char* name, int work_phone, int home_phone, const char* additional_info)
 {
+	if (this->full_name != nullptr)
+	{
+		delete[] this->full_name;
+	}
 
+	this->full_name = new char[strlen(full_name) + 1];
+	strcpy_s(this->full_name, strlen(full_name) + 1, full_name);
+
+
+	this->work_phone = work_phone;
+	this->home_phone = home_phone;
+
+
+	if (this->additional_info != nullptr)
+	{
+		delete[] this->additional_info;
+	}
+
+	this->additional_info = new char[strlen(additional_info) + 1];
+	strcpy_s(this->additional_info, strlen(additional_info) + 1, additional_info);
 }
 
 PhoneBook::~PhoneBook()
@@ -53,10 +64,11 @@ void PhoneBook::Init(const char* full_name, int work_phone, int home_phone, cons
 
 void PhoneBook::Print()
 {
+	std::cout << "Full name: " << full_name << std::endl;
+	std::cout << "Work phone number: " << work_phone << std::endl;
+	std::cout << "Home phone number: " << home_phone << std::endl;
+	std::cout << "Additional Info : " << additional_info << std::endl;
 }
-
-
-
 
 
 const char* PhoneBook::GetFullName()
