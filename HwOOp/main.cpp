@@ -1,6 +1,7 @@
 #include <iostream>
 #include "PhoneBook.h"
 
+
 void add_abonent(Abonent* a, int& arr_size)
 {
     char* full_name = nullptr;
@@ -69,7 +70,7 @@ void delete_abonent(Abonent* a, int& arr_size)
 }
 void find_by_name(Abonent* a, int& arr_size)
 {
-    char* full_name = nullptr;
+    char* full_name = new char[101];
     std::cout << "Enter full name (one word)";
     std::cin >> full_name;
 
@@ -81,7 +82,7 @@ void find_by_name(Abonent* a, int& arr_size)
         }
         if (strcmp(full_name, a[i].GetFullName()) == 0)
         {
-            std::cout << "The abonent with the index " << i << " matches the full name.";
+            std::cout << "The abonent with the index " << i << " matches the full name.\n";
         }
         else
         {

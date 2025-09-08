@@ -1,5 +1,6 @@
 #include "PhoneBook.h"
 #include <iostream>
+
 Abonent::Abonent()
 {
 	full_name = nullptr;
